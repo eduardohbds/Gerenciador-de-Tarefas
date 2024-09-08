@@ -3,7 +3,7 @@ import chalk from "chalk";
 import fs from "fs";
 import path from "path";
 
-const pool = new Pool({
+export const pool = new Pool({
     user: "users",
     host: "localhost",
     database: "users_auth",
