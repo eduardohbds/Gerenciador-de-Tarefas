@@ -2,6 +2,8 @@ import express,{Request,Response} from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import morgan from "morgan";
+import connectDB from "./config/connectDB";
+
 
 dotenv.config();
 
@@ -36,7 +38,8 @@ app.use((requests:Request,response:Response) => {
     });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
     console.log(`Server is running on http://localhost:${PORT}`); 
+    await connectDB();
 });
 
